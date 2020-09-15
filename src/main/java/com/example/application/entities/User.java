@@ -23,7 +23,7 @@ public class User {
 	@Id
 	private Long userid;
 	private String userType;
-	private String username;
+	private String userName;
 	private String password;
 	private Long phoneNumber;
 	private String email;
