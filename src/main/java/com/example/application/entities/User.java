@@ -1,6 +1,9 @@
 package com.example.application.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,14 +20,21 @@ import lombok.ToString;
 @Setter
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "user_id")
 	private Long userid;
+	@Column(name = "user_type")
 	private String userType;
+	@Column(name = "username")
 	private String userName;
+	@Column(name = "password")
 	private String password;
+	@Column(name = "phone_number")
 	private Long phoneNumber;
+	@Column(name = "email_id")
 	private String email;
 }
