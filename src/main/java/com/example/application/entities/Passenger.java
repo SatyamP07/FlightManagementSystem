@@ -20,7 +20,7 @@ import lombok.ToString;
 @Table(name = "passenger")
 public class Passenger {
 	@Id
-	private Long passengerId;
+	private Long passengerId; // need to change passengerId to pnrNumber
 	private String passengerName;
 	private int passengerAge;
 	private Long passengerUniqueId;
