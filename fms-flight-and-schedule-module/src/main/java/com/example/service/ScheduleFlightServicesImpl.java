@@ -6,11 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.application.entities.Airport;
-import com.example.application.entities.Flight;
-import com.example.application.entities.Schedule;
-import com.example.application.entities.ScheduledFlight;
-import com.example.application.repositories.ScheduledFlightRepository;
+import com.example.entities.Airport;
+import com.example.entities.Flight;
+import com.example.entities.Schedule;
+import com.example.entities.ScheduledFlight;
+import com.example.repositories.ScheduledFlightRepository;
 
 @Service
 public class ScheduleFlightServicesImpl implements ScheduledFlightService {
