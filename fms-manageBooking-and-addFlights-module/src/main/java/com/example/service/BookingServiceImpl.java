@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.entities.Booking;
 import com.example.entities.Passenger;
@@ -11,6 +12,7 @@ import com.example.exceptions.BookingException;
 import com.example.repositories.BookingRepository;
 import com.example.repositories.UserRepository;
 
+@Service
 public class BookingServiceImpl implements BookingService {
 
 	@Autowired

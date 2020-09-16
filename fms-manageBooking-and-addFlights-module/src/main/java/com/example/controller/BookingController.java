@@ -24,4 +24,9 @@ public class BookingController {
 	public List<Booking> displayAllBookings(@PathVariable Long userid) {
 		return bookingService.viewAllBooking(userid);
 	}
+	
+	@GetMapping("/viewAllBooking/{bookingId}")
+	public Booking displayBooking(@PathVariable Long bookingId) {
+		return bookingService.viewBooking(bookingId);
+	}
 }

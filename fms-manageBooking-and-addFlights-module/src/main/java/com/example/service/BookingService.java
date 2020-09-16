@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import com.example.entities.Booking;
 import com.example.entities.Passenger;
 
-@Service
 public interface BookingService {
 	
 	Booking addBooking(Booking booking);
