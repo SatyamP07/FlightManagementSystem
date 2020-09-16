@@ -1,17 +1,14 @@
 package com.example.application.entities;
 
-import java.sql.Date;
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.print.attribute.standard.DateTimeAtCompleted;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -26,18 +23,19 @@ import lombok.ToString;
 @Setter
 
 @Entity
-@Table(name = "shedule")
-public class Schedule {
-
+@Table(name = "airport")
+public class Airport {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "schedule_id")
-	private Long scheduleId;
-	@Column(name = "arrival_time")
-	private Date arrivalTime;
-	@Column(name = "departure_time")
-	private Date departureTime;
+	@Column(name = "airport_code")
+	private String airportCode;
+	@Column(name = "airport_name")
+	private String airportName;
+	@Column(name = "airport_location")
+	private String airportLocation;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "schedule")
-	private List<Airport> Airport;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="schedule_id")
+	private Schedule schedule;
 }
