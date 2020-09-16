@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.application.entities.User;
+import com.example.application.model.Credentials;
 import com.example.application.model.UserInfo;
 import com.example.application.service.UserService;
 
@@ -56,5 +57,13 @@ public class RegisterLoginModuleController {
 		return ResponseEntity.ok("User " + userName + "deleted successfully.");
 	}
 	
+	@GetMapping("/authenticate/user")
+	public ResponseEntity<UserInfo> authnticateUser(@RequestBody Credentials credentials) {
+		return ResponseEntity.ok(userService.authenticateUser(credentials));
+	}
 	
+	@GetMapping("/authenticate/admin")
+	public ResponseEntity<UserInfo> authnticateAdmin(@RequestBody Credentials credentials) {
+		return ResponseEntity.ok(userService.authenticateUser(credentials));
+	}
 }
