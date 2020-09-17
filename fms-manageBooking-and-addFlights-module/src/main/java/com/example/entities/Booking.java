@@ -32,7 +32,7 @@ import lombok.ToString;
 @Table(name = "booking")
 public class Booking {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "booking_id")
 	private Long bookingId;
 	@Column(name = "booking_date")
@@ -42,6 +42,7 @@ public class Booking {
 	@Column(name = "no_passegeners")
 	private int numberOfPassengers;
 	
+	/*
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="user_id")
 	private User user;
@@ -50,4 +51,5 @@ public class Booking {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="scheduled_flight_id")
 	private ScheduledFlight scheduledFlight;
+	*/
 }

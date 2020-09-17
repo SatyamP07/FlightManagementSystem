@@ -45,18 +45,19 @@ public class BookingServiceImpl implements BookingService {
 	}
 
 	@Override
-	public List<Booking> viewAllBooking(Long userId) {
-		List<Booking> bookingList = bookingRepository.findByUserId(userId);
-		
-		if(bookingList.isEmpty()) {
-			throw new BookingException("User has no bookings!");
-		} 
-		else {
-			for(Booking bookings: bookingList) {
-				System.out.println(bookings);
-			}
-			return bookingList;
-		}
+	public List<Booking> viewAllBooking() {
+//		List<Booking> bookingList = bookingRepository.findByUserId(userId);
+//		
+//		if(bookingList.isEmpty()) {
+//			throw new BookingException("User has no bookings!");
+//		} 
+//		else {
+//			for(Booking bookings: bookingList) {
+//				System.out.println(bookings);
+//			}
+//			return bookingList;
+//		}
+		return bookingRepository.findAll();
 	}
 
 	@Override

@@ -27,7 +27,7 @@ import lombok.ToString;
 @Table(name = "passenger")
 public class Passenger {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "passenger_id")
 	private Long passengerId; 
 	@Column(name = "passenger_name")
@@ -39,7 +39,9 @@ public class Passenger {
 	@Column(name = "luggage")
 	private double luggage; 
 	
+	/*
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "booking_id")
 	private Booking booking;
+	*/
 }

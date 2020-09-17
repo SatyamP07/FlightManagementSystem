@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,7 +33,7 @@ import lombok.ToString;
 public class Schedule {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "schedule_id")
 	private Long scheduleId;
 	@Column(name = "arrival_time")
@@ -41,9 +42,9 @@ public class Schedule {
 	private Date departureTime;
 	
 	@OneToOne
-	@JoinColumn(name="source")
+//	@JoinColumn(name="source")
 	private Airport sourceAirport;
 	@OneToOne
-	@JoinColumn(name="destination")
+//	@JoinColumn(name="destination")
 	private Airport destinationAirport;
 }

@@ -20,13 +20,13 @@ public class BookingController {
 	@Autowired
 	BookingService bookingService;
 	
-	@GetMapping("/viewAllBooking/{userid}")
-	public List<Booking> displayAllBookings(@PathVariable Long userid) {
-		return bookingService.viewAllBooking(userid);
+	@GetMapping("/viewAllBooking")
+	public List<Booking> displayAllBookings() {
+		return bookingService.viewAllBooking();
 	}
 	
-	@GetMapping("/viewAllBooking/{bookingId}")
-	public Booking displayBooking(@PathVariable Long bookingId) {
+	@GetMapping("/viewBooking/{bookingId}")
+	public Booking displayBooking(@PathVariable("bookingId") Long bookingId) {
 		return bookingService.viewBooking(bookingId);
 	}
 }

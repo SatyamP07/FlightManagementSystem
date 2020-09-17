@@ -2,6 +2,7 @@ package com.example.entities;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,16 +27,17 @@ import lombok.ToString;
 @Table(name = "scheduled_flight")
 public class ScheduledFlight {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "scheduled_flight_id")
 	private Long scheduledFlightId;
 	@Column(name = "available_seat")
 	private int availableSeat;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "schedule_id")
+//	@JoinColumn(name = "schedule_id")
 	private Schedule schedule;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "flight_id")
+//	@OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "flight_id")
+	@OneToOne(fetch = FetchType.EAGER)
 	private Flight flight;
 }

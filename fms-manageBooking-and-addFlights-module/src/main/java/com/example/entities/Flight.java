@@ -24,7 +24,7 @@ import lombok.ToString;
 @Table(name = "flight")
 public class Flight {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "flight_number")
 	private Long flightNumber;
 	@Column(name = "carrier_name")
